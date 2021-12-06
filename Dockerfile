@@ -19,3 +19,6 @@ RUN yes | pacman --noconfirm -S binutils mingw-w64-binutils mingw-w64-crt \
     mingw-w64-headers mingw-w64-winpthreads mingw-w64-cmake mingw-w64-gcc \
     mingw-w64-extra-cmake-modules mingw-w64-make mingw-w64-pkg-config make
 
+# Clear package cache to reduce Docker image size
+RUN pacman -Scc --noconfirm
+
